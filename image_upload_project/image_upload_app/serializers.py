@@ -23,6 +23,10 @@ class PlanSerializer(serializers.ModelSerializer):
 
 
 class ImageSerializer(serializers.ModelSerializer):
+    thumbnail_200 = serializers.SerializerMethodField()
+    thumbnail_400 = serializers.SerializerMethodField()
+    expiring_link = serializers.SerializerMethodField()
+
     class Meta:
         model = Image
         fields = (
